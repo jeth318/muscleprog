@@ -41,16 +41,23 @@ export type ActivityName =
   | "legPress";
 
 export type TrainingSession = {
-  [exercise in ActivityName]: SubExercise;
+  id?: string;
+  date: string;
+  activities: {
+    [exercise in ActivityName]: SubExercise;
+  };
 };
 
 export const defaultState: TrainingSession = {
-  chestPress: defaultSubstate,
-  bicepsCurl: defaultSubstate,
-  tricepsPress: defaultSubstate,
-  abdominal: defaultSubstate,
-  shoulderPress: defaultSubstate,
-  legPress: defaultSubstate,
+  date: "2024-04-16:15:00:00",
+  activities: {
+    chestPress: defaultSubstate,
+    bicepsCurl: defaultSubstate,
+    tricepsPress: defaultSubstate,
+    abdominal: defaultSubstate,
+    shoulderPress: defaultSubstate,
+    legPress: defaultSubstate,
+  },
 };
 
 export type Exercise = {
